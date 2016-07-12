@@ -1,0 +1,44 @@
+<div class="rca animated bounceInRight">
+
+  <div class="ui-grid-row">
+    <div class="ui-g-4">
+      <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
+      <input #Search type="text" pInputText size="50" style="float:left" placeholder="Global Filter">
+    </div>
+    <div class="ui-g-2">
+      <button type="button" pButton (click)="stacked = !stacked"  label="Toggle View"></button>
+    </div>
+    <div class="ui-g-4">
+      <p-calendar [(ngModel)]="from" placeholder="From date" dateFormat="dd/mm/yy"></p-calendar>
+      <p-calendar [(ngModel)]="to" placeholder="To date" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="ui-g-2">
+      <button type="button" pButton (click)="searchOnDates()" label="Search"></button>
+    </div>
+  </div>
+
+
+  <p-dataTable reorderableColumns="false" [value]="currentIssues" sortMode="multiple" [rows]="5" [paginator]="true"
+               [pageLinks]="5" [rowsPerPageOptions]="[5,10,20]" [responsive]="true" [stacked]="stacked" [globalFilter]="Search">
+    <p-column field="projectName" header="Project Name" [filter]="true" [sortable]="true"></p-column>
+    <p-column field="jiraNumber" header="Jira Number" [filter]="true" [sortable]="true"></p-column>
+    <p-column field="issueType" header="Issue Type" [filter]="true" [sortable]="true"></p-column>
+    <p-column field="RCAType" header="Rca Type" [filter]="true" [sortable]="true"></p-column>
+    <p-column field="createdBy" header="Created By" [filter]="true" [sortable]="true"></p-column>
+    <p-column header="Jira URL">
+      <template let-issue="rowData">
+        <a href="{{issue.jiraUrl}}" target="_blank"> {{issue.jiraUrl}} </a>
+      </template>
+    </p-column>
+    <!--<p-column field="comments" header="Comments"></p-column>-->
+    <p-column field="createdOn" header="Created On" [sortable]="true"></p-column>
+
+    <p-column styleClass="col-button">
+      <header> Toggle </header>
+      <template let-issue="rowData">
+        <button type="button" pButton (click)="editIssue(issue._id)" icon="fa-edit"></button>
+        <button type="button" pButton (click)="deleteIssue(issue._id)" icon="fa-trash fa-1x"></button>
+      </template>
+    </p-column>
+  </p-dataTable>
+</div>

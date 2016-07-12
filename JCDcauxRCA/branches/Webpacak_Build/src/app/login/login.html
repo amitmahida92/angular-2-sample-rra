@@ -1,0 +1,41 @@
+<div class="Wid90 DispBlock MarAuto MarTopPerc5 TexAlCenter animated bounceInDown">
+  <div class="Wid33 MarAuto WidAutoOnMobile">
+    <div class="EmptyBox30"></div>
+    <div class="Card ShadowEffect">
+      <div class="EmptyBox20"></div>
+      <div class="Wid100 OvHidden BigTopic Fs30"><i class="icon-security Fs60 DispBlock"></i> Login</div>
+      <div class="EmptyBox30"></div>
+
+      <form class="form-horizontal" (ngSubmit)="authenticate()" #loginForm="ngForm" novalidate>
+
+        <div class="Wid100">
+          <input type="text" pInputText id="username" name="username" placeholder="Username"
+                 [(ngModel)]="userDetails.username"  #username="ngModel" required/>
+        </div>
+        <span [hidden]="username.valid || username.pristine" class="alert alert-danger">
+          Username is required
+        </span>
+        <div class="EmptyBox20"></div>
+        <div class="Wid100">
+          <input type="text" pPassword id="password" name="password" type="password" placeholder="Password"
+                 [(ngModel)]="userDetails.password" #password="ngModel" required/>
+        </div>
+        <span [hidden]="password.valid || password.pristine" class="alert alert-danger">
+          Password is required
+        </span>
+        <div class="EmptyBox20"></div>
+
+        <span class="alert alert-danger" [hidden]="!loginError"> Invalid Username or Password </span>
+        <div class="EmptyBox10"></div>
+        <div class="Wid100">
+          <button id="btn_request" type="submit" [disabled]="!loginForm.form.valid"
+                  class="PurpleButton Fs18 White RaisedButton ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left">
+            <span class="ui-button-icon-left ui-c fa fa-fw fa fa-sign-in"></span><span class="ui-button-text ui-c"> SIGN IN </span>
+          </button>
+        </div>
+      </form>
+
+      <div class="EmptyBox20"></div>
+    </div>
+  </div>
+</div>

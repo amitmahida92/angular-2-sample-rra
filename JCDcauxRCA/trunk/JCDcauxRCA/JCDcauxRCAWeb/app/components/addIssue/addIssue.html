@@ -1,0 +1,129 @@
+<div class="container animated bounceInRight">
+    <div class="row" style="float: right">
+        <a class="navbar-brand" [routerLink]="['List']" href="javascript:void(0)">List Issues</a>
+    </div> <br><br>
+
+    <form class="form-horizontal" #addIssue="ngForm" novalidate>
+        <div class="panel panel-primary">
+            <div class="panel-heading"><strong>{{form_label}}</strong></div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group label-static">
+                            <label for="employeeName" class="rca-label control-label">Developer Name</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" disabled class="form-control" id="employeeName"
+                                       [(ngModel)]="issues.employeeName" required="required" #employeeName="ngForm"
+                                       ngControl="employeeName">
+                            </div>
+                        </div>
+                        <div class="form-group label-static">
+                            <label for="projectName" class="rca-label control-label">Project Name</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="projectName"
+                                       [(ngModel)]="issues.projectName"
+                                       required="required" #projectName="ngForm" ngControl="projectName">
+                            </div>
+                        </div>
+                        <div class="form-group label-static">
+
+                            <label for="jiraNumber" class="rca-label control-label">Jira Number</label>
+
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="jiraNumber"
+                                       [(ngModel)]="issues.jiraNumber"
+                                       required="required" #jiraNumber="ngForm" ngControl="jiraNumber">
+                            </div>
+                        </div>
+                        <div class="form-group label-static">
+                            <label for="issueType" class="rca-label control-label">Issue Type</label>
+
+                            <div class="col-sm-10">
+                                <select id="issueType" class="form-control" [(ngModel)]="issues.issueType"
+                                        required="required"
+                                        #issueType="ngForm" ngControl="issueType">
+                                    <option></option>
+                                    <option *ngFor="#issue of issueTypes" value="{{issue}}">{{issue}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group label-static">
+                            <label for="RCAType" class="rca-label control-label">RCA Type</label>
+
+                            <div class="col-sm-10">
+                                <select id="RCAType" class="form-control" [(ngModel)]="issues.RCAType"
+                                        required="required"
+                                        #RCAType="ngForm" ngControl="RCAType">
+                                    <option></option>
+                                    <option *ngFor="#rca of rcaTypes" value="{{rca}}">{{rca}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group label-static">
+                            <label for="createdOn" class="rca-label control-label">Jira Ticket Created On</label>
+
+                            <div class="col-sm-10">
+                                <input id="createdOn" type="date" value="" class="form-control"
+                                       [(ngModel)]="issues.createdOn"
+                                       required="required" #createdOn="ngForm" ngControl="createdOn">
+                            </div>
+                        </div>
+                        <div class="form-group label-static">
+                            <label for="createdBy" class="rca-label control-label">Jira Ticket Created By</label>
+
+                            <div class="col-sm-10">
+                                <input required type="text" class="form-control" id="createdBy"
+                                       [(ngModel)]="issues.createdBy"
+                                       #createdBy="ngForm" ngControl="createdBy">
+                            </div>
+                        </div>
+                        <div class="form-group label-static">
+                            <label for="jiraUrl" class="rca-label control-label">Jira URL</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="jiraUrl" [(ngModel)]="issues.jiraUrl"
+                                       required="required" #jiraUrl="ngForm" ngControl="jiraUrl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="comments" class="col-sm-4 control-label">Comments</label>
+
+                            <div class="col-sm-8">
+                        <textarea class="form-control" rows="2" id="comments" [(ngModel)]="issues.comments"
+                                  #comments="ngForm" ngControl="comments"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-sm-10 col-md-offset-2">
+                                <button type="button" [routerLink]="['List']" class="btn btn-raised btn-default">
+                                    Cancel
+                                </button>
+                                <button *ngIf="submit_label == 'ADD'" type="submit" (click)="addNewIssue()"
+                                        class="btn btn-raised btn-primary" [disabled]="!addIssue.form.valid">
+                                    {{submit_label}}
+                                </button>
+                                <button *ngIf="submit_label == 'UPDATE'" type="submit" (click)="updateIssue()"
+                                        class="btn btn-raised btn-primary" [disabled]="!addIssue.form.valid">
+                                    {{submit_label}}
+                                </button>
+                                <span class="clearfix" style="color: red"
+                                      [hidden]="!authenticated"> Invalid Data </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

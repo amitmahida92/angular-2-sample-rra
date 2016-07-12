@@ -1,0 +1,12 @@
+{
+  "status": "OK",
+  "messageCode": 0,
+  "message": "Returned User Data Information",
+  "data": {
+    "userData": {
+      "empCode": 123,
+      "username": "amit.mahida"
+    },
+    "auth": "true"
+  }
+}

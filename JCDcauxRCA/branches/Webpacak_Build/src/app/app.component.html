@@ -1,0 +1,363 @@
+<!--<div class="navbar navbar-inverse">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <!--<a class="navbar-brand logo" href="javascript:void(0)">-->
+                <!--<img src="../assets/img/rca-logo.png" alt="Root Cause Analysis">-->
+                <!--Root Cause Analysis</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-brand navbar-right">-->
+            <!--<a class="navbar-brand" [routerLink]="['login']" href="javascript:void(0)">Logout</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+
+<div id="layout-topbar">
+  <a id="mobile-menu-button" class="">
+    <span class="ButtonLine" id="ButtonLine1"></span>
+    <span class="ButtonLine" id="ButtonLine2"></span>
+    <span class="ButtonLine" id="ButtonLine3"></span>
+  </a>
+
+  <a id="logo" ng-reflect-router-link="/" ng-reflect-href="#/" href="#/">
+    <img class="Fleft" src="assets/img/rca-logo.png"> <strong class="titleMain">Root Cause Analysis</strong>
+  </a>
+
+  <a class="ShowOnMobile ripplelink" id="show-top-menu"><i class="icon-more_vert" id="active"></i><i
+    class="icon-close DispNone" id="passive"></i> </a>
+
+  <ul id="top-menu">
+    <!--<li>-->
+      <!--<a class="ripplelink"><span class="ink animate"-->
+                                  <!--style="height: 42px; width: 42px; top: -5px; left: 9.25px;"></span><i-->
+        <!--class="icon-search"></i> <span class="ShowOnMobile">Search Here</span></a>-->
+      <!--<ul class="">-->
+        <!--<li>-->
+          <!--<a><i class="icon-search"></i><input #Search type="text"> </a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</li>-->
+    <li>
+      <a class="ripplelink"><i class="icon-power"></i> <span class="ShowOnMobile">System</span></a>
+      <ul>
+        <!--<li><a href="#"><span class="Blue"><i class="icon-airline_seat_individual_suite Fs30 DispBlock"></i> Sleep Mode</span></a>-->
+        <!--</li>-->
+        <!--<li><a href="#"><span class="Orange"><i class="icon-track_changes Fs30 DispBlock"></i> Restart System</span></a>-->
+        <!--</li>-->
+        <li><a href="#"><span class="Red"><i class="icon-vpn_key Fs30 DispBlock"></i> Logout</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+<div id="wrapper">
+  <div id="wrapperIndent">
+
+    <div class="Animated05 ps-container ps-active-y" id="layout-menu-cover">
+      <ul class="layout-menu ShadowEffect modena-menu" id="menu">
+        <li role="menuitem" (click)="redirectToAdd()">
+          <a class="menulink ripplelink">
+            <i class="icon-null"></i><i class="icon-dvr"></i> Add New Issue</a>
+        </li>
+        <li role="menuitem"><a class="menulink ripplelink" href="promotion-page.html" target="_blank"><i
+          class="icon-null"></i><i class="icon-dvr"></i>Promotion Page</a></li>
+        <!--<li role="menuitem">-->
+          <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-color_lens"></i> Color-->
+            <!--Variations</a>-->
+          <!--<ul role="menu">-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"-->
+                 <!--onclick="$('body').attr('class', '').addClass('GrayModena Geometry');"><i class="icon-null"></i><i-->
+                <!--class="icon-colorize"></i>Gray</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"-->
+                 <!--onclick="$('body').attr('class', '').addClass('BlueModena Geometry');"><i class="icon-null"></i><i-->
+                <!--class="icon-colorize"></i>Blue</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"-->
+                 <!--onclick="$('body').attr('class', '').addClass('IndigoModena Geometry');"><i class="icon-null"></i><i-->
+                <!--class="icon-colorize"></i>Indigo</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"-->
+                 <!--onclick="$('body').attr('class', '').addClass('CyanModena Geometry');"><i class="icon-null"></i><i-->
+                <!--class="icon-colorize"></i>Cyan</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"-->
+                 <!--onclick="$('body').attr('class', '').addClass('RedModena Geometry');"><i class="icon-null"></i><i-->
+                <!--class="icon-colorize"></i>Red</a>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</li>-->
+        <!--<li role="menuitem">-->
+          <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-format_color_fill"></i> Modena-->
+            <!--Theme</a>-->
+          <!--<ul role="menu">-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/sample" ng-reflect-href="#/sample"-->
+                 <!--href="#/sample"><i class="icon-null"></i><i class="fa fa-columns"></i>Sample Page</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/forms" ng-reflect-href="#/forms" href="#/forms"><i-->
+                <!--class="icon-null"></i><i class="icon-paper"></i>Form Elements</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/data" ng-reflect-href="#/data" href="#/data"><i-->
+                <!--class="icon-null"></i><i class="icon-subtitles"></i>Data Components</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem"><a class="menulink ripplelink" ng-reflect-router-link="/datatable"-->
+                                   <!--ng-reflect-href="#/datatable"-->
+                                   <!--href="#/datatable"><i class="icon-null"></i><i class="icon-web"></i>DataTable</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/panels" ng-reflect-href="#/panels"-->
+                 <!--href="#/panels"><i class="icon-null"></i><i class="icon-chrome_reader_mode Fs16"></i>Panels</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/overlays" ng-reflect-href="#/overlays"-->
+                 <!--href="#/overlays"><i class="icon-null"></i><i class="icon-photo_size_select_small"></i>Overlays</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/menus" ng-reflect-href="#/menus" href="#/menus"><i-->
+                <!--class="icon-null"></i><i class="icon-receipt Fs16"></i>Menus</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/messages" ng-reflect-href="#/messages"-->
+                 <!--href="#/messages"><i class="icon-null"></i><i class="icon-sms_failed Fs16"></i>Messages</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/misc" ng-reflect-href="#/misc" href="#/misc"><i-->
+                <!--class="icon-null"></i><i class="icon-developer_board"></i>Misc</a>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</li>-->
+        <!--<li role="menuitem">-->
+          <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-library_books"></i> Default-->
+            <!--Pages</a>-->
+          <!--<ul role="menu">-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" ng-reflect-router-link="/empty" ng-reflect-href="#/empty" href="#/empty"><i-->
+                <!--class="icon-null"></i><i class="icon-settings_overscan"></i>Empty Page</a>-->
+            <!--</li>-->
+            <!--<li role="menuitem"><a class="menulink ripplelink" href="login.html" target="_blank"><i-->
+              <!--class="icon-null"></i><i class="icon-assignment_ind"></i>Login Page</a></li>-->
+            <!--<li role="menuitem"><a class="menulink ripplelink" href="error.html" target="_blank"><i-->
+              <!--class="icon-null"></i><i class="icon-warning"></i>Error Page</a></li>-->
+            <!--<li role="menuitem"><a class="menulink ripplelink" href="404.html" target="_blank"><i class="icon-null"></i><i-->
+              <!--class="icon-warning"></i>404 Page</a></li>-->
+            <!--<li role="menuitem"><a class="menulink ripplelink" href="denied.html" target="_blank"><i-->
+              <!--class="icon-null"></i><i class="icon-visibility_off"></i>Access Denied Page</a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+        <!--<li role="menuitem">-->
+          <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-device_hub"></i> Menu-->
+            <!--Hierarchy</a>-->
+          <!--<ul role="menu">-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-folder_open"></i> Submenu-->
+                <!--1<i class="icon-add Fright Fs16"></i></a>-->
+              <!--<ul class="menu-level-1" role="menu">-->
+                <!--<li role="menuitem">-->
+                  <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-folder_open"></i>-->
+                    <!--Submenu 1.1<i class="icon-add Fright Fs16"></i></a>-->
+                  <!--<ul class="menu-level-2" role="menu">-->
+                    <!--<li role="menuitem">-->
+                      <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-folder_open"></i>-->
+                        <!--Submenu 1.1.1<i class="icon-add Fright Fs16"></i></a>-->
+                      <!--<ul class="menu-level-3" role="menu">-->
+                        <!--<li role="menuitem"><a class="menulink ripplelink" href="#"><i class="icon-null"></i><i-->
+                          <!--class="icon-link"></i>Link 1</a></li>-->
+                        <!--<li role="menuitem"><a class="menulink ripplelink" href="#"><i class="icon-null"></i><i-->
+                          <!--class="icon-link"></i>Link 2</a></li>-->
+                        <!--<li role="menuitem"><a class="menulink ripplelink" href="#"><i class="icon-null"></i><i-->
+                          <!--class="icon-link"></i>Link 3</a></li>-->
+                      <!--</ul>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</li>-->
+              <!--</ul>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-folder_open"></i> Submenu-->
+                <!--2<i class="icon-add Fright Fs16"></i></a>-->
+              <!--<ul class="menu-level-1" role="menu">-->
+                <!--<li role="menuitem">-->
+                  <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-folder_open"></i>-->
+                    <!--Submenu 2.2<i class="icon-add Fright Fs16"></i></a>-->
+                  <!--<ul class="menu-level-2" role="menu">-->
+                    <!--<li role="menuitem">-->
+                      <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-folder_open"></i>-->
+                        <!--Submenu 2.2.1<i class="icon-add Fright Fs16"></i></a>-->
+                      <!--<ul class="menu-level-3" role="menu">-->
+                        <!--<li role="menuitem"><a class="menulink ripplelink" href="#"><i class="icon-null"></i><i-->
+                          <!--class="icon-link"></i>Link 1</a></li>-->
+                        <!--<li role="menuitem"><a class="menulink ripplelink" href="#"><i class="icon-null"></i><i-->
+                          <!--class="icon-link"></i>Link 2</a></li>-->
+                        <!--<li role="menuitem"><a class="menulink ripplelink" href="#"><i class="icon-null"></i><i-->
+                          <!--class="icon-link"></i>Link 3</a></li>-->
+                      <!--</ul>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</li>-->
+              <!--</ul>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</li>-->
+        <!--<li role="menuitem">-->
+          <!--<a class="menulink ripplelink" href="http://www.primefaces.org/modena/font-icons.xhtml" target="_blank"><i-->
+            <!--class="icon-null"></i><i class="icon-stars"></i>Font Icons</a>-->
+        <!--</li>-->
+        <!--<li role="menuitem"><a class="menulink ripplelink" href="#"-->
+                               <!--onclick="$('body').addClass('ui-modena-rtl'); return false;"><i class="icon-null"></i><i-->
+          <!--class="icon-align-right"></i>RTL Menu</a></li>-->
+        <!--<li role="menuitem">-->
+          <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="icon-card_membership"></i>-->
+            <!--Documentation</a>-->
+          <!--<ul role="menu">-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="fa fa-code"></i> Core CSS-->
+                <!--Docs<i class="icon-add Fright Fs16"></i></a>-->
+              <!--<ul class="menu-level-1" role="menu">-->
+                <!--<li role="menuitem"><a class="menulink ripplelink" ng-reflect-router-link="/setup"-->
+                                       <!--ng-reflect-href="#/setup"-->
+                                       <!--href="#/setup"><i class="icon-null"></i><i-->
+                  <!--class="fa fa-book"></i>Installation</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/responsive-mode.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Responsive-->
+                  <!--Mode</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/containerx.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>ContainerX</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/widx.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>WidX</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/selection.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Selection</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/visibilities.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Visibility</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/displaying.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Displaying</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/positioning.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i-->
+                  <!--class="fa fa-book"></i>Positioning</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/underline.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Underline</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/floating.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Floating</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/overflows.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Overflows</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/empty-boxes.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Empty-->
+                  <!--Boxes</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/opacity.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Opacity</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/text-aligning.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Text Aligning</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/box-sizing.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Box Sizing</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/font-size.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Font Size</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/font-weights.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Font-->
+                  <!--Weights</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/core/transitions.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i-->
+                  <!--class="fa fa-book"></i>Transitions</a></li>-->
+              <!--</ul>-->
+            <!--</li>-->
+            <!--<li role="menuitem">-->
+              <!--<a class="menulink ripplelink" href="#"><i class="icon-null"></i><i class="fa fa-code"></i> Layout CSS-->
+                <!--Docs<i class="icon-add Fright Fs16"></i></a>-->
+              <!--<ul class="menu-level-1" role="menu">-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/less.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>LESS</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/layout-colors.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Layout Colors</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/cards.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Cards</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/text-colors.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Text-->
+                  <!--Colors</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/background-colors.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Background-->
+                  <!--Colors</a></li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/borders.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Borders</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/separators.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Separators</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/effects.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Effects</a>-->
+                <!--</li>-->
+                <!--<li role="menuitem"><a class="menulink ripplelink"-->
+                                       <!--href="http://www.primefaces.org/modena/docs/layout/roboto-font.xhtml"-->
+                                       <!--target="_blank"><i class="icon-null"></i><i class="fa fa-book"></i>Roboto-->
+                  <!--Font</a></li>-->
+              <!--</ul>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</li>-->
+        <!--<li class="Separator"></li>-->
+      </ul>
+      <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+        <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+      </div>
+      <div class="ps-scrollbar-y-rail" style="top: 0px; height: 428px; right: 3px; visibility: visible;">
+        <div class="ps-scrollbar-y" style="top: 0px; height: 321px;"></div>
+      </div>
+    </div>
+
+    <div id="layout-portlets-cover">
+      <div class="Container96 Fnone MarAuto">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

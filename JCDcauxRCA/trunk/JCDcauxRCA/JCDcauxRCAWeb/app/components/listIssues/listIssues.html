@@ -1,0 +1,80 @@
+<div class="rca animated bounceInRight">
+    <div class="row" style="margin: 1% 88% 1%;">
+        <a class="btn btn-raised btn-success" [routerLink]="['Add']" href="javascript:void(0)">ADD NEW ISSUE</a>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading"><strong>YOUR ISSUES</strong></div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th style="width: 15%;">Project</th>
+                    <th style="width: 10%;">Ticket No</th>
+                    <th style="width: 11%;">Issue Type</th>
+                    <th style="width: 8%;">RCA Type</th>
+                    <th style="width: 14%;">Created On</th>
+                    <th style="width: 14%;">Created By</th>
+                    <th style="width: 2%;">URL</th>
+                    <th style="width: 25%;">Comments</th>
+                    <th><i class="fa fa-pencil fa-2x"></i></th>
+                    <th><i class="fa fa-trash fa-2x"></i></th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="#list of currentIssues | paginate: config">
+                    <td>{{list.projectName}}</td>
+                    <td>{{list.jiraNumber}}</td>
+                    <td>{{list.issueType}}</td>
+                    <td>{{list.RCAType}}</td>
+                    <td>{{list.createdOn | date }}</td>
+                    <td>{{list.createdBy}}</td>
+                    <td><a href="{{list.jiraUrl}}">{{list.jiraUrl}}</a></td>
+                    <td>{{list.comments}}</td>
+                    <td><a (click)="editIssue(list)"><i class="fa fa-pencil fa-1x"></i></a></td>
+                    <td><a (click)="deleteIssue(list._id)"><i class="fa fa-trash fa-1x"></i></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+            <pagination-controls #p
+                                 [id]="config.id"
+                                 (pageChange)="config.currentPage = $event" maxSize="5" autoHide="true" >
+
+                <ul class="pagination" style="float: right">
+                    <li [class.disabled]="p.isFirstPage()" *ngIf="p.directionLinks">
+                        <a href="javascript:void(0)" *ngIf="!p.isFirstPage()" (click)="p.previous()">«</a>
+                    </li>
+                    <li *ngFor="#page of p.pages" [class.active]="p.getCurrent() === page.value">
+                        <a (click)="p.setCurrent(page.value)" >{{ page.label }}</a>
+                    </li>
+                    <li [class.disabled]="p.isLastPage()" *ngIf="p.directionLinks">
+                        <a href="javascript:void(0)" *ngIf="!p.isLastPage()" (click)="p.next()">»</a>
+                    </li>
+                </ul>
+
+                <!--<div class="custom-pagination">
+                    <div class="pagination-previous" [class.disabled]="p.isFirstPage()" *ngIf="p.directionLinks">
+                        <a *ngIf="!p.isFirstPage()" (click)="p.previous()"> < </a>
+                    </div>
+
+                    <div *ngFor="#page of p.pages" [class.current]="p.getCurrent() === page.value">
+                        <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+                            <span>{{ page.label }}</span>
+                        </a>
+                        <div *ngIf="p.getCurrent() === page.value">
+                            <span>{{ page.label }}</span>
+                        </div>
+                    </div>
+
+                    <div class="pagination-next" [class.disabled]="p.isLastPage()" *ngIf="p.directionLinks">
+                        <a *ngIf="!p.isLastPage()" (click)="p.next()"> > </a>
+                    </div>
+                </div>-->
+
+            </pagination-controls>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,122 @@
+<div class="container animated bounceInRight">
+  <div class="row" style="float: right">
+    <a class="navbar-brand" (click)="redirectToList()" href="javascript:void(0)">List Issues</a>
+  </div>
+  <br><br>
+
+  <form class="form-horizontal" #addIssue="ngForm" novalidate>
+    <p-panel header="ADD NEW ISSUE">
+      <div class="ui-grid-row">
+        <div class="ui-g-2">
+          <label for="employeeName" class="">Developer Name</label>
+        </div>
+        <div class="ui-g-4">
+          <input type="text" disabled pInputText id="employeeName" name="employeeName"
+                 [(ngModel)]="issues.employeeName" required="required"
+                 #employeeName ngControl="employeeName">
+        </div>
+
+        <div class="ui-g-2">
+          <label for="projectName" class="rca-label control-label">Project Name</label>
+        </div>
+        <div class="ui-g-4">
+          <input type="text" pInputText id="projectName" name="projectName" [(ngModel)]="issues.projectName"
+                 required="required" #projectName ngControl="projectName">
+        </div>
+      </div><br>
+      <div class="ui-grid-row">
+        <div class="ui-g-2">
+          <label for="jiraNumber" class="rca-label control-label">Jira Number</label>
+        </div>
+        <div class="ui-g-4">
+          <input type="number" pInputText id="jiraNumber" name="jiraNumber" [(ngModel)]="issues.jiraNumber"
+                 required="required" #jiraNumber ngControl="jiraNumber">
+        </div>
+        <div class="ui-g-2">
+          <label class="rca-label control-label">Issue Type</label>
+        </div>
+        <div class="ui-g-4">
+          <select id="issueType" name="issueType" pInputText [(ngModel)]="issues.issueType"
+                  required="required" #issueType ngControl="issueType">
+            <option *ngFor="let issue of issueTypes" value="{{issue}}">{{issue}}</option>
+          </select>
+        </div>
+      </div><br>
+
+      <div class="ui-grid-row">
+        <div class="ui-g-2">
+          <label for="RCAType" class="rca-label control-label">RCA Type</label>
+        </div>
+        <div class="ui-g-4">
+          <select id="RCAType" name="RCAType" pInputText [(ngModel)]="issues.RCAType" required="required"
+                  #RCAType ngControl="RCAType">
+            <option *ngFor="let rca of rcaTypes" value="{{rca}}">{{rca}}</option>
+          </select>
+        </div>
+        <div class="ui-g-2">
+          <label for="createdOn" class="rca-label control-label">Jira Ticket Created On</label>
+        </div>
+        <div class="ui-g-4">
+          <input id="createdOn" name="createdOn" type="date" value="" pInputText [(ngModel)]="issues.createdOn"
+                 required="required"
+                 #createdOn ngControl="createdOn">
+        </div>
+      </div><br>
+
+      <div class="ui-grid-row">
+        <div class="ui-g-2">
+          <label for="createdBy" class="rca-label control-label">Jira Ticket Created By</label>
+        </div>
+        <div class="ui-g-4">
+          <input required type="text" pInputText id="createdBy" name="createdBy"
+                 [(ngModel)]="issues.createdBy" #createdBy ngControl="createdBy">
+        </div>
+        <div class="ui-g-2">
+          <label for="jiraUrl" class="rca-label control-label">Jira URL</label>
+
+        </div>
+        <div class="ui-g-4">
+          <input type="text" pInputText id="jiraUrl" name="jiraUrl" [(ngModel)]="issues.jiraUrl"
+                 required="required" #jiraUrl ngControl="jiraUrl">
+        </div>
+      </div><br>
+
+      <div class="ui-grid-row">
+        <div class="ui-g-2">
+          <label for="comments">Comments</label>
+        </div>
+        <div class="ui-g-6">
+          <textarea pInputText rows="1" id="comments" name="comments" [(ngModel)]="issues.comments"
+                    #comments ngControl="comments"></textarea>
+        </div>
+        <div class="ui-g-4">
+          <button *ngIf="submitLabel == 'ADD'" type="submit" (click)="addNewIssue()" pButton label="{{submitLabel}}"
+                  [disabled]="!addIssue.form.valid" icon="fa-plus"></button>
+          <button *ngIf="submitLabel == 'UPDATE'" type="submit" (click)="updateIssue()" pButton label="{{submitLabel}}"
+                  class="btn btn-raised btn-primary" [disabled]="!addIssue.form.valid" icon="fa-pencil-square-o">
+          </button>
+
+          <button type="button" (click)="redirectToList()" class="btn btn-raised btn-default" pButton label="CANCEL"></button>
+          <span class="clearfix" style="color: red" [hidden]="!authenticated"> Invalid Data </span>
+        </div>
+      </div>
+    </p-panel>
+
+
+    <!--<div class="col-sm-8">-->
+
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-4">-->
+    <!--<div class="form-group">-->
+    <!--<div class="col-sm-10 col-md-offset-2">-->
+
+
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+  </form>
+</div>

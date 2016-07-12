@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <meta charset="UTF-8">
+    <title>RCA</title>
+    <script language="javascript">
+//        history.pushState(null, null, 'index.html');
+//        window.addEventListener('popstate', function (event) {
+//            history.pushState(null, null, 'index.html');
+//        });
+//
+//        document.onmousedown = function (event) {
+//            if (event.button == 2) {
+//                return false;
+//            }
+//        };
+//
+//        document.onkeypress = function (event) {
+//            event = (event || window.event);
+//            if (event.keyCode == 123) {
+//                return false;
+//            }
+//        };
+//
+//        document.onkeydown = function (event) {
+//            event = (event || window.event);
+//            if (event.keyCode == 123) {
+//                return false;
+//            }
+//        };
+    </script>
+
+    <script type="text/javascript">
+        function renderJS(path) {
+            document.write("<script type='text/javascript' src='" + path + "?v=" + Date.now() + "'><\/script>");
+        }
+        function renderCSS(path) {
+            document.write("<link href='" + path + "?v=" + Date.now() + "' rel='stylesheet' />");
+        }
+    </script>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+    <!-- inject:css -->
+    <script> renderCSS("css/bootstrap.min.css"); </script>
+    <script> renderCSS("css/bootstrap-material-design.css"); </script>
+    <script> renderCSS("css/ripples.min.css"); </script>
+    <script> renderCSS("css/font-awesome.min.css"); </script>
+    <script> renderCSS("css/animate.css"); </script>
+    <script> renderCSS("css/main.css"); </script>
+    <!-- endinject -->
+
+    <!-- head:js -->
+    <script> renderJS("node_modules/es6-shim/es6-shim.min.js"); </script>
+    <script> renderJS("node_modules/systemjs/dist/system-polyfills.js"); </script>
+    <script> renderJS("node_modules/angular2/bundles/angular2-polyfills.js"); </script>
+    <script> renderJS("node_modules/systemjs/dist/system.src.js"); </script>
+    <script> renderJS("node_modules/rxjs/bundles/Rx.js"); </script>
+    <script> renderJS("node_modules/angular2/bundles/http.dev.js"); </script>
+    <script> renderJS("node_modules/angular2/bundles/angular2.dev.js"); </script>
+    <script> renderJS("node_modules/angular2/bundles/router.dev.js"); </script>
+    <script> renderJS("node_modules/ng2-pagination/dist/ng2-pagination-bundle.js"); </script>
+    <script> renderJS("scripts/system-config.js"); </script>
+    <script> renderJS("scripts/jquery-1.11.3.min.js"); </script>
+    <script> renderJS("scripts/jquery.toaster.js"); </script>
+    <script> renderJS("scripts/arrive.min.js"); </script>
+    <script> renderJS("scripts/material.js"); </script>
+    <script> renderJS("scripts/ripples.min.js"); </script>
+    <!-- endinject -->
+
+    <script>
+        $.material.init();
+    </script>
+
+
+</head>
+<body>
+
+<rca>Loading RCA...</rca>
+
+</body>
+</html>

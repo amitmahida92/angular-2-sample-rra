@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "JCDcauxRCA", "JCDcauxRCA\JCDcauxRCA.njsproj", "{62713AE7-6027-4E19-83D4-E4C884DD54D2}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "JCDcauxRCAWeb", "JCDcauxRCAWeb\JCDcauxRCAWeb.njsproj", "{59EF03C4-5C30-4101-9D76-610D87B49632}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62713AE7-6027-4E19-83D4-E4C884DD54D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62713AE7-6027-4E19-83D4-E4C884DD54D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62713AE7-6027-4E19-83D4-E4C884DD54D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62713AE7-6027-4E19-83D4-E4C884DD54D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59EF03C4-5C30-4101-9D76-610D87B49632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59EF03C4-5C30-4101-9D76-610D87B49632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59EF03C4-5C30-4101-9D76-610D87B49632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59EF03C4-5C30-4101-9D76-610D87B49632}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

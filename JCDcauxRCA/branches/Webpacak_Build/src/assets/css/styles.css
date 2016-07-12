@@ -1,0 +1,19 @@
+#logo img {
+  height: 40px;
+  margin: 0px 0px 0px 0px;
+}
+
+strong.titleMain{
+  color: white;
+  font-variant: small-caps;
+  font-size: 28px;
+}
+
+.alert.alert-danger{
+  color: red;padding-top: 5px
+}
+
+.ui-datatable .ui-paginator{
+  padding: 2px !important;
+  text-align: -webkit-center;
+}
